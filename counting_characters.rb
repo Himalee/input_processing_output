@@ -32,7 +32,7 @@ def characters_loop
   number_of_characters
 end
 
-def number_of_characters
+def number_of_characters # also includes empty string - how can I change this?
   puts "#{@string} has #{count_characters(@string)} characters."
 end
 
