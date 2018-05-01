@@ -1,25 +1,42 @@
-def count(input)
+class CountingCharacters
+
+def count_characters(input)
   input.size
 end
 
-def error(input)
-  /[^a-z]/ =~ input
-end
+# def error(input)
+#   /[^a-z]/ =~ input
+# end
 
-def error2(input)
+def empty_string(input)
   /(^$)/ =~ input
 end
 
 def characters
   puts "What is the input string?"
   string = gets.chomp
-  # count = string.size
-  if error2(string)
+  if empty_string(string)
     puts "Please enter a word"
     characters
   else
-    puts "#{string} has #{count(string)} characters"
+    puts "#{string} has #{count_characters(string)} characters."
   end
 end
 
-characters
+def characters_loop
+  puts "Enter a word"
+  @string = gets.chomp
+  while @string == ""
+    characters_loop
+  end
+  number_of_characters
+end
+
+def number_of_characters
+  puts "#{@string} has #{count_characters(@string)} characters."
+end
+
+end
+
+cc = CountingCharacters.new
+cc.characters_loop
