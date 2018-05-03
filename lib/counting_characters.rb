@@ -1,7 +1,7 @@
 class CountingCharacters
 
   def self.counts_characters(string)
-    "hello"
+    string
   end
 
 end
