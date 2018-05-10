@@ -20,24 +20,30 @@ class Display
     @input = input
   end
 
+  def start
+    display_prompt
+    display_user_output
+  end
+
   def display_prompt
     @output.puts "Enter a word"
   end
 
-  def get_user_input
-    @input.gets.chomp
-  end
-
   def display_user_output
-    @input.gets.chomp
+    @user_input = @input.gets.chomp
     @output.puts displays_message
   end
 
   def displays_message
-    "#{@input.string} has #{@input.size} characters"
+    "#{@user_input} has #{@user_input.size} characters"
   end
 end
 
+# class run
+#   require 'display'
+#   d = Display.new
+#   d.start
+# end
 
-cc = CountingCharacters.new("hello")
-cc.displays_message
+# d = Display.new
+# d.start
