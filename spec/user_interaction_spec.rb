@@ -25,7 +25,5 @@ describe Display do
       display.display_user_output
       expect(output.string).to eq("hello, world has 12 characters\n")
     end
-
   end
-
 end

@@ -12,11 +12,3 @@ class CountingCharacters
     message
   end
 end
-
-
-
-# class run
-#   require 'display'
-#   d = Display.new
-#   d.start
-# end
