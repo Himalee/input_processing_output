@@ -27,6 +27,15 @@ describe Display do
       display = Display.new(output, input)
       expect(display.get_user_input).to eq("hello")
     end
+
+      it "displays 'hello has 5 characters'" do
+        output = StringIO.new
+        input = StringIO.new("hello")
+        display = Display.new(output, input)
+        display.display_user_output
+        expect(output.string).to eq("hello has 5 characters\n")
+      end
+
   end
 
 end

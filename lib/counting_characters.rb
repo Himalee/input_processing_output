@@ -27,6 +27,15 @@ class Display
   def get_user_input
     @input.gets.chomp
   end
+
+  def display_user_output
+    @input.gets.chomp
+    @output.puts displays_message
+  end
+
+  def displays_message
+    "#{@input.string} has #{@input.size} characters"
+  end
 end
 
 
