@@ -1,19 +1,34 @@
 class CountingCharacters
 
-  def initialize(output = $stdout)
+  def initialize(words_to_count)
+    @words_to_count = words_to_count
+  end
+
+  def message
+    "#{@words_to_count} has #{@words_to_count.size} characters"
+  end
+
+  def displays_message
+    message
+  end
+end
+
+class Display
+
+  def initialize(output = $stdout, input = $stdin)
     @output = output
-  end
-
-  def counts_characters(words_to_count)
-    @characters_count = words_to_count.size
-    message(words_to_count)
-  end
-
-  def message(words_to_count)
-    "#{words_to_count} has #{@characters_count} characters"
+    @input = input
   end
 
   def display_prompt
     @output.puts "Enter a word"
   end
+
+  def get_user_input
+    @input.gets.chomp
+  end
 end
+
+
+cc = CountingCharacters.new("hello")
+cc.displays_message
