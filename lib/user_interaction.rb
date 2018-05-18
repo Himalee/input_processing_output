@@ -1,8 +1,9 @@
 class Display
 
-  def initialize(output = $stdout, input = $stdin)
+  def initialize(output = $stdout, input = $stdin, counts)
     @output = output
     @input = input
+    @counts_characters = counts
   end
 
   def start
@@ -20,7 +21,7 @@ class Display
   end
 
   def displays_message
-    "#{@user_input} has #{@user_input.size} characters"
+    @counts_characters.message(@user_input)
   end
 end
 
