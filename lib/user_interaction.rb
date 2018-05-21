@@ -1,9 +1,11 @@
+require_relative "counting_characters"
+
 class Display
 
   def initialize(output = $stdout, input = $stdin, counts)
     @output = output
     @input = input
-    @counts_characters = counts
+    @counts = counts
   end
 
   def start
@@ -21,9 +23,10 @@ class Display
   end
 
   def displays_message
-    @counts_characters.message(@user_input)
+    @counts.message(@user_input)
   end
 end
 
-# d = Display.new
-# d.start
+counts = CountingCharacters.new
+display = Display.new(counts)
+display.start

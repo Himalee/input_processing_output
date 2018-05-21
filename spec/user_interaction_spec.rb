@@ -5,8 +5,8 @@ describe Display do
   context "displays output" do
     it "displays 'Enter a word'" do
       output = StringIO.new
-      counts = CountingCharacters.new
-      display = Display.new(output, counts)
+      count = CountingCharacters.new
+      display = Display.new(output, count)
       display.display_prompt
       expect(output.string).to eq("Enter a word\n")
     end
